@@ -48,7 +48,7 @@ const uploadMulti = multer({
 
 
 app.post('/upload', upload.single('file'), (req, res, ) => {
-  res.status(200).json({message:'File uploaded'})
+  res.status(200).json({message:{result:req.file}})
 })
 
 app.post('/uploadmulti', uploadMulti.array('files', 2), async (req, res, ) => {
